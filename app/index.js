@@ -1,7 +1,7 @@
 const playButton = document.querySelector(".elements__play-btn");
 const pauseButton = document.querySelector(".elements__pause-btn");
 const audio = document.querySelector(".audio__file");
-let timeLeft = document.querySelector(".elements__time");
+let time = document.querySelector(".elements__time");
 
 
 playButton.addEventListener("click", () => {
@@ -14,17 +14,25 @@ pauseButton.addEventListener("click", () => {
     audio.pause();
 })
 
+window.addEventListener("load", timeUpdate);
 
-audio.addEventListener("timeupdate", function () {
+audio.addEventListener("timeupdate", timeUpdate);
+
+function timeUpdate() {
     let duration = parseInt(audio.duration);
     let currentTime = parseInt(audio.currentTime);
     timeLeft = duration - currentTime;
 
-    let s = timeLeft % 60;
-    let m = Math.floor(timeLeft / 60 ) % 60;
+    
+    var s;
+    var m;
+
+    s = timeLeft % 60;
+    m = Math.floor(timeLeft / 60 ) % 60;
 
     s = s < 10 ? "0"+s : s;
     m = m < 10 ? "0"+m : m;
 
-    timeLeft.innerHTML = m+":"+s;
-}, false)
+
+    time.innerHTML = m+":"+s;
+}
