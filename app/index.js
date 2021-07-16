@@ -1,10 +1,50 @@
+const elements = document.querySelector(".elements");
 
+const initialCards = [
+    {
+      title: "Meditaion for beginners",
+      time: "05:05",
+      image: "./images/image.png",
+      audio: "./audio/audio.mp3"
+    },
+    {
+      title: "How to be more grateful",
+      time: "05:05",
+      image: "./images/image.png",
+      audio: "./audio/audio.mp3"
+    },
+    {
+      title: "How to relieve stress",
+      time: "05:05",
+      image: "./images/image.png",
+      audio: "./audio/audio.mp3"
+    },
+    {
+      title: "How to sleep better",
+      time: "05:05",
+      image: "./images/image.png",
+      audio: "./audio/audio.mp3"
+    },
+    {
+      title: "How to reduce anxiety",
+      time: "05:05",
+      image: "./images/image.png",
+      audio: "./audio/audio.mp3"
+    },
+    {
+      title: "How to improve self esteem",
+      time: "05:05",
+      image: "./images/image.png",
+      audio: "./audio/audio.mp3"
+    },
+  ];
 class Card {
-    constructor({ data }, template) {
-        this._audio = data.audioButton;
+    constructor( data , template) {
+        this._template = template;
         this._time = data.time;
         this._title = data.title;
-        this._template = template;
+        this._image = data.image;
+        this._audio = data.audio;
     }
 
     _getTemplate() {
@@ -15,8 +55,8 @@ class Card {
         this._getTemplate();
         this._playButton = this._element.querySelector(".elements__play-btn");
         this._pauseButton = this._element.querySelector(".elements__pause-btn");
-        this._element.querySelector(".elements__title") = this._title;
-        this._element.querySelector(".elements__time") = this._time;
+        this._title = this._element.querySelector(".elements__title");
+        this._time = this._element.querySelector(".elements__time");
         this._setEventListeners();
     }
 
@@ -52,12 +92,20 @@ class Card {
         
         window.addEventListener("load", this._timeUpdate);
         
-        this._audio.addEventListener("timeupdate", this._timeUpdate);
+        this._playButton.addEventListener("timeupdate", this._timeUpdate);
     }
 }
 
+function createNewCard(cards, cardContainer){
+  const newCard = new Card(cards, cardContainer);
+  const newCardElement = newCard.generateCard();
+  elements.prepend(newCardElement);
+}
 
-
+initialCards.forEach((item) => {
+    createNewCard(item, "#card-template");
+    console.log(createNewCard(item, "#card-template"));
+})
 
 
 // const playButton = document.querySelector(".elements__play-btn");
