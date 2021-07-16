@@ -11,3 +11,6 @@ pauseButton.addEventListener("click", () => {
     pauseButton.classList.remove("show");
     audio.pause();
 })
+
+alert()
+alert()
