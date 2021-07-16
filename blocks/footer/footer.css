@@ -1,0 +1,8 @@
+@import url(./__copyrights/);
+@import url(./__copyrights-name/footer__copyrights-name.css);
+.footer{
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 14px;
+}

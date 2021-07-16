@@ -1,0 +1,19 @@
+@import url(./__card/elements__card.css);
+@import url(./__text/elements__text.css);
+@import url(./__title/elements__title.css);
+@import url(./__time/elements__time.css);
+@import url(./__btn/elements__btn.css);
+@import url(./__play-btn/elements__play-btn.css);
+@import url(./__pause-btn/elements__pause-btn.css);
+
+.elements{
+    list-style: none;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: grid;
+    grid-gap: 18px 25px;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+}
+

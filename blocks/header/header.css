@@ -1,0 +1,12 @@
+@import url(./__greetings/header__greetings.css);
+@import url(./__greetings-name/header__greetings-name.css);
+@import url(./__profile/header__profile.css);
+@import url(./__profile-image/header__profile-image.css);
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    margin-bottom: 48px;
+}

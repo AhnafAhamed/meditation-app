@@ -1,0 +1,19 @@
+.elements__card{
+    position: relative;
+    width: 320px;
+    height: 170px;
+    border-radius: 10px;
+    background-image: url(../../../images/meditation-for-beginners.jpg);
+    background-size: cover;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.elements__card::after{
+    content: '';
+    background: linear-gradient(103.62deg, rgba(8, 130, 255, 0.92) 18.2%, rgba(7, 141, 255, 0.76) 49.72%, rgba(0, 212, 255, 0.82) 84.71%);
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    z-index: -1;
+}
